@@ -53,4 +53,15 @@ app.listen(port, function(err){
 })
 
 
+app.get('/delete-contact/', function(req, res){
+    console.log(req.query);
+    let phone = req.query.phone
 
+    let contactindex = contactList.findIndex(contact => contact.phone == phone);
+
+    if(contactindex != -1){
+        contactList.splice(contactindex, 1);
+    }
+
+    return res.redirect('back');
+});
