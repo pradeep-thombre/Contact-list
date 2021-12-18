@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title%>
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+
+        <div>
+            <ul>
+                   
+                <% for (let i of contact_list) { %> 
+                   <div class="contact"> 
+                        <li>
+                            <p><%= i.name %></p>
+                            <p><%= i.phone %></p>
+                        </li>
+                    </div>
+                    <div class="delete-button">
+                        <a href="/delete-contact/?phone=<%= i.phone %>">
+                            delete
+                        </a>
+                    </div>
+                <% } %>
+            </ul>
+        </div>
+
+        
+    </body>
+</html>
